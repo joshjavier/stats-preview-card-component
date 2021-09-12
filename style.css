@@ -56,7 +56,13 @@ h1, h2 {
 
 h1 {
   font-size: 1.87rem;
-  text-align: center;
+}
+
+@media (min-width: 1200px) {
+  h1 {
+    font-size: 2.4rem;
+    line-height: 1.25;
+  }
 }
 
 strong {
@@ -78,11 +84,6 @@ li p {
   letter-spacing: .05em;
 }
 
-header {
-  border-top-left-radius: var(--border-radius);
-  border-top-right-radius: var(--border-radius);
-}
-
 
 
 /* Layout */
@@ -90,19 +91,24 @@ header {
 body {
   background-color: var(--very-dark-blue);
   text-align: center;
-  padding: 1.63em;
+  padding: 14vmin 1.63em;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 main {
   background-color: var(--dark-desaturated-blue);
   border-radius: var(--border-radius);
+  margin: 0 auto;
+  max-width: 420px;
 }
 
-header {
-  padding-top: calc((3 / 4) * 100%);
+.image-header {
   background: linear-gradient(
-    var(--soft-violet),
-    var(--soft-violet)
+      var(--soft-violet),
+      var(--soft-violet)
     ),
     url("images/image-header-mobile.jpg") no-repeat center/cover;
   background-blend-mode: multiply;
@@ -110,15 +116,69 @@ header {
 
 section {
   padding: 2.65em 2em;
+  display: flex;
+  align-items: center;
 }
 
-section > * + * {
-  margin-top: 2em;
-}
-
-section > p,
-ul {
+.container > * + * {
   margin-top: 1em;
+}
+
+@media (max-width: 1199px) {
+  .image-header {
+    padding-top: calc((3 / 4) * 100%);
+    border-top-left-radius: var(--border-radius);
+    border-top-right-radius: var(--border-radius);
+  }
+}
+
+@media (min-width: 1200px) {
+  body {
+    text-align: left;
+  }
+
+  main {
+    width: 90%;
+    max-width: 1112.87px;
+    display: flex;
+    flex-direction: row-reverse;
+  }
+
+  header {
+    flex: 1 0 48.5%;
+  }
+
+  .image-header {
+    background: linear-gradient(
+      var(--soft-violet),
+      var(--soft-violet)
+    ),
+    url("images/image-header-desktop.jpg") no-repeat center/cover;
+    
+    padding-top: calc((223 / 270) * 100%);
+    border-radius: 0;
+    border-top-right-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
+  }
+
+  section {
+    padding: 4vw 4.8em;
+    flex: 1 0 51.5%;
+  }
+
+  ul {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  ul > * + * {
+    margin-left: 1em;
+  }
+
+  .container > * + * {
+    max-width: 23.5em;
+    margin-top: 2em;
+  }
 }
 
 
