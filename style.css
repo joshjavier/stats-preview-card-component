@@ -112,6 +112,10 @@ main {
     ),
     url("images/image-header-mobile.jpg") no-repeat center/cover;
   background-blend-mode: multiply;
+  
+  padding-top: calc((3 / 4) * 100%);
+  border-top-left-radius: var(--border-radius);
+  border-top-right-radius: var(--border-radius);
 }
 
 section {
@@ -122,14 +126,6 @@ section {
 
 .container > * + * {
   margin-top: 1em;
-}
-
-@media (max-width: 1199px) {
-  .image-header {
-    padding-top: calc((3 / 4) * 100%);
-    border-top-left-radius: var(--border-radius);
-    border-top-right-radius: var(--border-radius);
-  }
 }
 
 @media (min-width: 1200px) {
